@@ -31,13 +31,13 @@
     }
   },
   "module": "./esm/index.js",
+  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "7.26.4",
     "@babel/core": "7.26.10",
     "@babel/preset-env": "7.26.9",
     "babel-plugin-add-module-exports": "1.0.4",
     "browserify": "17.0.1",
-    "cross-env": "7.0.3",
     "eslint": "8.57.1",
     "eslint-config-standard": "17.1.0",
     "eslint-plugin-import": "2.31.0",
@@ -51,8 +51,8 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "compile:esm": "rm -rf esm && mkdir esm && cross-env BABEL_ENV=esm babel lib -d esm",
-    "compile:cjs": "rm -rf cjs && mkdir cjs && cross-env BABEL_ENV=cjs babel lib -d cjs && echo '{\"type\":\"commonjs\"}' > cjs/package.json",
+    "compile:esm": "rm -rf esm && mkdir esm && BABEL_ENV=esm babel lib -d esm",
+    "compile:cjs": "rm -rf cjs && mkdir cjs && BABEL_ENV=cjs babel lib -d cjs && echo '{\"type\":\"commonjs\"}' > cjs/package.json",
     "compile": "npm run compile:esm && npm run compile:cjs",
     "browser": "browserify --standalone xcstrings cjs/index.js -o xcstrings.js && uglifyjs xcstrings.js --compress --mangle -o xcstrings.min.js",
     "build": "npm run compile && npm run browser",
