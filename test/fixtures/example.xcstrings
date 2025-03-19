@@ -1,0 +1,277 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "empty" : {
+    },
+    "empty-str" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "empty-trans" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "source with value"
+          }
+        }
+      }
+    },
+    "empty-trans-str" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "source with value"
+          }
+        }
+      }
+    },
+    "key1" : {
+      "comment" : "some comment",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hallo"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hello"
+          }
+        }
+      }
+    },
+    "key2.nested" : {
+      "comment" : "comment",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "xcstrings Daten-Manager"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "xcstrings Data Manager"
+          }
+        }
+      }
+    },
+    "interpolation" : {
+      "comment" : "some substitution",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%d von %d verbleiben"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%d of %d remaining"
+          }
+        }
+      }
+    },
+    "pluralized" : {
+      "comment" : "Pluralized translation",
+      "localizations" : {
+        "de" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld Haus"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld Häuser"
+                }
+              }
+            }
+          }
+        },
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld house"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld houses"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "vars" : {
+      "localizations" : {
+        "de" : {
+          "variations" : {
+            "device" : {
+              "iphone" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "eine Übersetzung für das iPhone"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "eine andere Übersetzung"
+                }
+              }
+            }
+          }
+        },
+        "en" : {
+          "variations" : {
+            "device" : {
+              "iphone" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "a translation for the iPhone"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "an other translation"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "vars-pluralized-dev" : {
+      "comment" : "ctx1",
+      "localizations" : {
+        "de" : {
+          "variations" : {
+            "device" : {
+              "appletv" : {
+                "variations" : {
+                  "plural" : {
+                    "one" : {
+                      "stringUnit" : {
+                        "state" : "translated",
+                        "value" : "ein Apple TV"
+                      }
+                    },
+                    "other" : {
+                      "stringUnit" : {
+                        "state" : "translated",
+                        "value" : "%lld Apple TVs"
+                      }
+                    }
+                  }
+                }
+              },
+              "iphone" : {
+                "variations" : {
+                  "plural" : {
+                    "one" : {
+                      "stringUnit" : {
+                        "state" : "translated",
+                        "value" : "ein Iphone"
+                      }
+                    },
+                    "other" : {
+                      "stringUnit" : {
+                        "state" : "translated",
+                        "value" : "%lld Iphones"
+                      }
+                    }
+                  }
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld Geräte"
+                }
+              }
+            }
+          }
+        },
+        "en" : {
+          "variations" : {
+            "device" : {
+              "appletv" : {
+                "variations" : {
+                  "plural" : {
+                    "one" : {
+                      "stringUnit" : {
+                        "state" : "translated",
+                        "value" : "one apple tv"
+                      }
+                    },
+                    "other" : {
+                      "stringUnit" : {
+                        "state" : "translated",
+                        "value" : "%lld apple tvs"
+                      }
+                    }
+                  }
+                }
+              },
+              "iphone" : {
+                "variations" : {
+                  "plural" : {
+                    "one" : {
+                      "stringUnit" : {
+                        "state" : "translated",
+                        "value" : "an iphone"
+                      }
+                    },
+                    "other" : {
+                      "stringUnit" : {
+                        "state" : "translated",
+                        "value" : "%lld iphones"
+                      }
+                    }
+                  }
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld devices"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

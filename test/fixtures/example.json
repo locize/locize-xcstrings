@@ -1,0 +1,110 @@
+{
+  "sourceLng": "en",
+  "resources": {
+    "en": {
+      "empty" : {},
+      "empty-str" : {
+        "value": ""
+      },
+      "empty-trans" : {
+        "value" : "source with value"
+      },
+      "empty-trans-str" : {
+        "value" : "source with value"
+      },
+      "key1": {
+        "value": "Hello",
+        "context": {
+          "text": "some comment"
+        }
+      },
+      "key2.nested": {
+        "value": "xcstrings Data Manager",
+        "context": {
+          "text": "comment"
+        }
+      },
+      "interpolation": {
+        "value": "%d of %d remaining",
+        "context": {
+          "text": "some substitution"
+        }
+      },
+      "pluralized[variations.plural.one]": {
+        "value": "%lld house",
+        "context": {
+          "text": "Pluralized translation"
+        }
+      },
+      "pluralized[variations.plural.other]": {
+        "value": "%lld houses"
+      },
+      "vars[variations.device.iphone]": {
+        "value": "a translation for the iPhone"
+      },
+      "vars[variations.device.other]": {
+        "value": "an other translation"
+      },
+      "vars-pluralized-dev[variations.device.appletv[variations.plural.one]]": {
+        "value": "one apple tv",
+        "context": {
+          "text": "ctx1"
+        }
+      },
+      "vars-pluralized-dev[variations.device.appletv[variations.plural.other]]": {
+        "value": "%lld apple tvs"
+      },
+      "vars-pluralized-dev[variations.device.iphone[variations.plural.one]]": {
+        "value": "an iphone"
+      },
+      "vars-pluralized-dev[variations.device.iphone[variations.plural.other]]": {
+        "value": "%lld iphones"
+      },
+      "vars-pluralized-dev[variations.device.other]": {
+        "value": "%lld devices"
+      }
+    },
+    "de": {
+      "empty-trans-str" : {
+        "value" : ""
+      },
+      "key1": {
+        "value": "Hallo"
+      },
+      "key2.nested": {
+        "value": "xcstrings Daten-Manager"
+      },
+      "interpolation": {
+        "value": "%d von %d verbleiben"
+      },
+      "pluralized[variations.plural.one]": {
+        "value": "%lld Haus"
+      },
+      "pluralized[variations.plural.other]": {
+        "value": "%lld Häuser"
+      },
+      "vars[variations.device.iphone]": {
+        "value": "eine Übersetzung für das iPhone"
+      },
+      "vars[variations.device.other]": {
+        "value": "eine andere Übersetzung"
+      },
+      "vars-pluralized-dev[variations.device.appletv[variations.plural.one]]": {
+        "value": "ein Apple TV"
+      },
+      "vars-pluralized-dev[variations.device.appletv[variations.plural.other]]": {
+        "value": "%lld Apple TVs"
+      },
+      "vars-pluralized-dev[variations.device.iphone[variations.plural.one]]": {
+        "value": "ein Iphone"
+      },
+      "vars-pluralized-dev[variations.device.iphone[variations.plural.other]]": {
+        "value": "%lld Iphones"
+      },
+      "vars-pluralized-dev[variations.device.other]": {
+        "value": "%lld Geräte"
+      }
+    }
+  },
+  "version": "1.0"
+}

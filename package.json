@@ -1,0 +1,79 @@
+{
+  "name": "locize-xcstrings",
+  "version": "1.0.0",
+  "description": "xcstrings2locize and locize2xcstrings converter xcstrings utils",
+  "type": "module",
+  "main": "./cjs/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "require": "./cjs/index.js",
+      "default": "./esm/index.js"
+    },
+    "./locize2xcstrings": {
+      "require": "./cjs/locize2xcstrings.js",
+      "default": "./esm/locize2xcstrings.js"
+    },
+    "./cjs": {
+      "default": "./cjs/index.js"
+    },
+    "./cjs/xcstrings2locize": {
+      "default": "./cjs/xcstrings2locize.js"
+    },
+    "./esm": {
+      "default": "./esm/index.js"
+    },
+    "./esm/xcstrings2locize": {
+      "default": "./esm/xcstrings2locize.js"
+    },
+    "./esm/locize2xcstrings": {
+      "default": "./esm/locize2xcstrings.js"
+    }
+  },
+  "module": "./esm/index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "7.26.4",
+    "@babel/core": "7.26.10",
+    "@babel/preset-env": "7.26.9",
+    "babel-plugin-add-module-exports": "1.0.4",
+    "browserify": "17.0.1",
+    "eslint": "8.57.1",
+    "eslint-config-standard": "17.1.0",
+    "eslint-plugin-import": "2.31.0",
+    "eslint-plugin-n": "16.6.2",
+    "eslint-plugin-promise": "6.6.0",
+    "eslint-plugin-require-path-exists": "1.1.9",
+    "eslint-plugin-standard": "5.0.0",
+    "expect.js": "0.3.1",
+    "mocha": "11.1.0",
+    "uglify-js": "3.19.3"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "compile:esm": "rm -rf esm && mkdir esm && BABEL_ENV=esm babel lib -d esm",
+    "compile:cjs": "rm -rf cjs && mkdir cjs && BABEL_ENV=cjs babel lib -d cjs && echo '{\"type\":\"commonjs\"}' > cjs/package.json",
+    "compile": "npm run compile:esm && npm run compile:cjs",
+    "browser": "browserify --standalone xcstrings cjs/index.js -o xcstrings.js && uglifyjs xcstrings.js --compress --mangle -o xcstrings.min.js",
+    "build": "npm run compile && npm run browser",
+    "test": "npm run lint && npm run build && node --test",
+    "preversion": "npm run test && npm run build && git push",
+    "postversion": "git push && git push --tags"
+  },
+  "keywords": [
+    "xcstrings",
+    "apple",
+    "json",
+    "js",
+    "i18next",
+    "translation",
+    "converter"
+  ],
+  "author": "adrai",
+  "license": "MIT",
+  "homepage": "http://locize.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/locize/locize-xcstrings.git"
+  }
+}
