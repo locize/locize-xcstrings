@@ -14,11 +14,18 @@
       "require": "./cjs/locize2xcstrings.js",
       "default": "./esm/locize2xcstrings.js"
     },
+    "./xcstrings2locize": {
+      "require": "./cjs/xcstrings2locize.js",
+      "default": "./esm/xcstrings2locize.js"
+    },
     "./cjs": {
       "default": "./cjs/index.js"
     },
     "./cjs/xcstrings2locize": {
       "default": "./cjs/xcstrings2locize.js"
+    },
+    "./cjs/locize2xcstrings": {
+      "default": "./cjs/locize2xcstrings.js"
     },
     "./esm": {
       "default": "./esm/index.js"
