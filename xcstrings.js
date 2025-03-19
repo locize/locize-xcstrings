@@ -42,7 +42,7 @@ function locize2xcstrings(data) {
   lngs.forEach(function (l) {
     var keys = Object.keys(data.resources[l]);
     keys.forEach(function (k) {
-      var _result$strings, _key, _data$resources$l$k;
+      var _result$strings, _key, _data$resources$l$k, _data$resources$l;
       var regRes = k.match(keyMetaRegex);
       var key;
       var keyMeta;
@@ -64,7 +64,7 @@ function locize2xcstrings(data) {
         var _data$resources$l$k2;
         result.strings[key].comment = (_data$resources$l$k2 = data.resources[l][k]) === null || _data$resources$l$k2 === void 0 || (_data$resources$l$k2 = _data$resources$l$k2.context) === null || _data$resources$l$k2 === void 0 ? void 0 : _data$resources$l$k2.text;
       }
-      if (typeof data.resources[l][k] === 'string') {
+      if (typeof ((_data$resources$l = data.resources[l]) === null || _data$resources$l === void 0 ? void 0 : _data$resources$l[k]) === 'string') {
         data.resources[l][k] = {
           value: data.resources[l][k]
         };
