@@ -64,6 +64,11 @@ function locize2xcstrings(data) {
         var _data$resources$l$k2;
         result.strings[key].comment = (_data$resources$l$k2 = data.resources[l][k]) === null || _data$resources$l$k2 === void 0 || (_data$resources$l$k2 = _data$resources$l$k2.context) === null || _data$resources$l$k2 === void 0 ? void 0 : _data$resources$l$k2.text;
       }
+      if (typeof data.resources[l][k] === 'string') {
+        data.resources[l][k] = {
+          value: data.resources[l][k]
+        };
+      }
       if (!keyMeta && data.resources[l][k].value !== undefined) {
         var _result$strings$key, _result$strings$key$l;
         (_result$strings$key = result.strings[key]).localizations || (_result$strings$key.localizations = {});
