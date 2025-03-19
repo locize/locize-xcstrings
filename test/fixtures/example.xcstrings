@@ -73,6 +73,16 @@
         }
       }
     },
+    "key3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "no context"
+          }
+        }
+      }
+    },
     "interpolation" : {
       "comment" : "some substitution",
       "localizations" : {

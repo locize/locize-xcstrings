@@ -24,6 +24,9 @@
           "text": "comment"
         }
       },
+      "key3": {
+        "value": "no context"
+      },
       "interpolation": {
         "value": "%d of %d remaining",
         "context": {

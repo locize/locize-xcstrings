@@ -14,3 +14,13 @@ test('locize2xcstrings', (t) => {
   // console.log(JSON.stringify(ret, null, 2))
   assert.deepEqual(ret, fixtures.example.xcstrings)
 })
+
+test('locize2xcstrings (direct value)', (t) => {
+  const ex = { ...fixtures.example.js }
+  ex.resources.en.key3 = ex.resources.en.key3.value
+  ex.resources.en['vars[variations.device.other]'] = ex.resources.en['vars[variations.device.other]'].value
+  ex.resources.en['vars-pluralized-dev[variations.device.iphone[variations.plural.other]]'] = ex.resources.en['vars-pluralized-dev[variations.device.iphone[variations.plural.other]]'].value
+  const ret = locize2xcstrings(ex)
+  // console.log(JSON.stringify(ret, null, 2))
+  assert.deepEqual(ret, fixtures.example.xcstrings)
+})
