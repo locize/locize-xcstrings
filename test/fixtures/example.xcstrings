@@ -2,6 +2,7 @@
   "sourceLanguage" : "en",
   "strings" : {
     "empty" : {
+
     },
     "empty-str" : {
       "localizations" : {
@@ -39,6 +40,23 @@
         }
       }
     },
+    "interpolation" : {
+      "comment" : "some substitution",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%d von %d verbleiben"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%d of %d remaining"
+          }
+        }
+      }
+    },
     "key1" : {
       "comment" : "some comment",
       "localizations" : {
@@ -46,6 +64,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hallo"
+          }
+        },
+        "de-CH" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoi"
           }
         },
         "en" : {
@@ -79,23 +103,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "no context"
-          }
-        }
-      }
-    },
-    "interpolation" : {
-      "comment" : "some substitution",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%d von %d verbleiben"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%d of %d remaining"
           }
         }
       }

@@ -32,17 +32,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = locize2xcstrings;
 var keyMetaRegex = /\[(.*?)\]$/;
+var getAllKeys = function getAllKeys(res, lngs) {
+  var keys = [];
+  lngs.forEach(function (l) {
+    var ks = Object.keys(res[l]);
+    ks.forEach(function (k) {
+      if (keys.indexOf(k) < 0) {
+        keys.push(k);
+      }
+    });
+  });
+  return keys.sort().sort(function (a, b) {
+    var aMatch = a.match(keyMetaRegex);
+    var bMatch = b.match(keyMetaRegex);
+    var aTest = a;
+    var bTest = b;
+    if (aMatch) aTest = a.substring(0, aMatch.index);
+    if (bMatch) bTest = b.substring(0, bMatch.index);
+    if (aTest === bTest) return 0;
+    return aTest > bTest ? 1 : -1;
+  });
+};
 function locize2xcstrings(data) {
   var result = {
     sourceLanguage: data.sourceLng || Object.keys(data.resources || {})[0],
     strings: {},
     version: data.version || '1.0'
   };
-  var lngs = Object.keys(data.resources);
+  var lngs = Object.keys(data.resources).sort();
+  var keys = getAllKeys(data.resources, lngs);
   lngs.forEach(function (l) {
-    var keys = Object.keys(data.resources[l]);
     keys.forEach(function (k) {
-      var _result$strings, _key, _data$resources$l$k;
+      var _result$strings, _key, _data$resources$resul;
       var regRes = k.match(keyMetaRegex);
       var key;
       var keyMeta;
@@ -60,9 +81,9 @@ function locize2xcstrings(data) {
         }
       }
       (_result$strings = result.strings)[_key = key] || (_result$strings[_key] = {});
-      if (l === result.sourceLanguage && (_data$resources$l$k = data.resources[l][k]) !== null && _data$resources$l$k !== void 0 && (_data$resources$l$k = _data$resources$l$k.context) !== null && _data$resources$l$k !== void 0 && _data$resources$l$k.text) {
-        var _data$resources$l$k2;
-        result.strings[key].comment = (_data$resources$l$k2 = data.resources[l][k]) === null || _data$resources$l$k2 === void 0 || (_data$resources$l$k2 = _data$resources$l$k2.context) === null || _data$resources$l$k2 === void 0 ? void 0 : _data$resources$l$k2.text;
+      if (!result.strings[key].comment && (_data$resources$resul = data.resources[result.sourceLanguage]) !== null && _data$resources$resul !== void 0 && (_data$resources$resul = _data$resources$resul[k]) !== null && _data$resources$resul !== void 0 && (_data$resources$resul = _data$resources$resul.context) !== null && _data$resources$resul !== void 0 && _data$resources$resul.text) {
+        var _data$resources$resul2;
+        result.strings[key].comment = (_data$resources$resul2 = data.resources[result.sourceLanguage][k]) === null || _data$resources$resul2 === void 0 || (_data$resources$resul2 = _data$resources$resul2.context) === null || _data$resources$resul2 === void 0 ? void 0 : _data$resources$resul2.text;
       }
       if (data.resources[l][k] === undefined || data.resources[l][k] === null) return;
       if (typeof data.resources[l][k] === 'string') {
@@ -117,7 +138,8 @@ function locize2xcstrings(data) {
       }
     });
   });
-  return result;
+  var str = JSON.stringify(result, null, 2);
+  return str.replace(/"\s*:\s*/g, '" : ').replace(/:\s*{},\s*/g, ': {\n\n    },\n    ');
 }
 module.exports = exports.default;
 },{}],3:[function(require,module,exports){
@@ -142,6 +164,7 @@ var checkForComment = function checkForComment(data, result, l, key) {
   }
 };
 function xcstrings2locize(data) {
+  if (typeof data === 'string') data = JSON.parse(data);
   var result = {
     sourceLng: data.sourceLanguage,
     resources: _defineProperty({}, data.sourceLanguage, {}),

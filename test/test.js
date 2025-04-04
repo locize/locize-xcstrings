@@ -7,12 +7,16 @@ test('xcstrings2locize', (t) => {
   const ret = xcstrings2locize(fixtures.example.xcstrings)
   // console.log(JSON.stringify(ret, null, 2))
   assert.deepEqual(ret, fixtures.example.js)
+
+  const ret2 = xcstrings2locize(JSON.parse(fixtures.example.xcstrings))
+  // console.log(JSON.stringify(ret, null, 2))
+  assert.deepEqual(ret2, fixtures.example.js)
 })
 
 test('locize2xcstrings', (t) => {
   const ret = locize2xcstrings(fixtures.example.js)
-  // console.log(JSON.stringify(ret, null, 2))
-  assert.deepEqual(ret, fixtures.example.xcstrings)
+  assert.deepEqual(JSON.parse(ret), JSON.parse(fixtures.example.xcstrings))
+  assert.equal(ret, fixtures.example.xcstrings)
 })
 
 test('locize2xcstrings (direct value)', (t) => {
@@ -21,6 +25,6 @@ test('locize2xcstrings (direct value)', (t) => {
   ex.resources.en['vars[variations.device.other]'] = ex.resources.en['vars[variations.device.other]'].value
   ex.resources.en['vars-pluralized-dev[variations.device.iphone[variations.plural.other]]'] = ex.resources.en['vars-pluralized-dev[variations.device.iphone[variations.plural.other]]'].value
   const ret = locize2xcstrings(ex)
-  // console.log(JSON.stringify(ret, null, 2))
-  assert.deepEqual(ret, fixtures.example.xcstrings)
+  assert.deepEqual(JSON.parse(ret), JSON.parse(fixtures.example.xcstrings))
+  assert.equal(ret, fixtures.example.xcstrings)
 })

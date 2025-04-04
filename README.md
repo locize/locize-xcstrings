@@ -33,7 +33,7 @@ const xcstrings2locize = require('locize-xcstrings/cjs/xcstrings2locize')
 ## Usage
 
 ```js
-const xcstrings = {
+const xcstrings = `{
   "sourceLanguage" : "en",
   "strings" : {
     "empty" : {
@@ -420,7 +420,7 @@ const locizeData = {
     }
   },
   "version": "1.0"
-}
+}`
 
 import { xcstrings2locize, locize2xcstrings } from 'locize-xcstrings'
 

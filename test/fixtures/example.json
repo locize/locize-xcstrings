@@ -107,6 +107,11 @@
       "vars-pluralized-dev[variations.device.other]": {
         "value": "%lld Geräte"
       }
+    },
+    "de-CH": {
+      "key1": {
+        "value": "Hoi"
+      }
     }
   },
   "version": "1.0"
