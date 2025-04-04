@@ -1,6 +1,6 @@
 {
   "name": "locize-xcstrings",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "xcstrings2locize and locize2xcstrings converter xcstrings utils",
   "type": "module",
   "main": "./cjs/index.js",
